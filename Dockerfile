@@ -1,6 +1,6 @@
 FROM centos
 
-MAINTAINER saikiran.reddy916@gmail.com
+MAINTAINER chaitanyaphani456@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
