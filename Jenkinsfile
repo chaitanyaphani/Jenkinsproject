@@ -55,6 +55,11 @@ pipeline {
             }
         }
 */        
+     stage('Deploy to K8'S'){
+           steps{
+           sh 'kubectl apply -f jenk.yml'
+           }
+           }
     }
 }
 
