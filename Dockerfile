@@ -1,4 +1,4 @@
-FROM centos
+FROM amazonlinux
 
 MAINTAINER chaitanyaphani456@gmail.com
 
