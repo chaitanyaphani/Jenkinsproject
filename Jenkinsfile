@@ -25,7 +25,8 @@ pipeline {
                 sh 'mvn package'
             }
         }
-/*        stage('Copy war') {
+/*        
+        stage('Copy war') {
             steps {
                 echo 'copying ...'
                 sh 'sudo cp /var/lib/jenkins/workspace/project/target/*.war /home/centos/'
@@ -54,7 +55,7 @@ pipeline {
                 sh 'ansible-playbook depl.yml'
             }
         }
-*/        
+        
     stage('Deploy to K8S') {
       steps{
        sh 'kubectl apply -f jenk.yml'
@@ -62,5 +63,5 @@ pipeline {
            }
     }
 }
-
+/*
 
