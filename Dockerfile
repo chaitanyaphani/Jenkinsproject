@@ -1,4 +1,4 @@
-FROM amazonlinux
+FROM ubuntu
 
 MAINTAINER chaitanyaphani456@gmail.com
 
