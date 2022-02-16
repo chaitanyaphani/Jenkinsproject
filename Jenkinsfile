@@ -38,7 +38,7 @@ pipeline {
     
     
      stage('Build and push Docker images..') {
-        environment {
+     environment {
             DOCKERHUB_CREDENTIALS=credentials('dockerjenkins')
         }
       steps{
