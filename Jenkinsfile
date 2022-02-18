@@ -53,19 +53,20 @@ pipeline {
       }
   
   }
-/*    
+    
         stage('Run ansible'){
             steps{
-                sh 'ansible-playbook depl.yml'
+                def image_id = registry + ":$BUILD_NUMBER"
+                sh 'ansible-playbook depl.yml --extra-vars \"image_id=${image_id}\"'
             }
         }
-*/        
+/*        
     stage('Deploy to K8S') {
       steps{
        sh 'kubectl apply -f jenk.yml'
            }
            }
-           
+*/           
     }
 }
 
