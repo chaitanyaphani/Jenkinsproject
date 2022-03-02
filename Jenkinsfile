@@ -56,6 +56,7 @@ pipeline {
     
         stage('Run ansible'){
             steps{
+                sh 'ssh root@172.31.12.130'
                 sh 'ansible-playbook depl.yml'
             }
         }
