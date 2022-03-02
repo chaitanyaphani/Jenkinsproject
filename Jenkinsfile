@@ -56,8 +56,7 @@ pipeline {
     
         stage('Run ansible'){
             steps{
-                def image_id = registry + ":$BUILD_NUMBER"
-                sh 'ansible-playbook depl.yml --extra-vars \"image_id=${image_id}\"'
+                sh 'ansible-playbook depl.yml'
             }
         }
 /*        
