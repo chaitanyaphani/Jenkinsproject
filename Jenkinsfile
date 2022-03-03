@@ -56,6 +56,7 @@ pipeline {
     
         stage('Run ansible'){
             steps{
+                sh 'ansiblePlaybook credentialsId: 'ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: '/root', playbook: '/root''
                 sh 'ssh -t -t root@ip-172-31-12-130.us-east-2.compute.internal'
                 sh 'whoami'
                 sh 'ansible-playbook depl.yml'
