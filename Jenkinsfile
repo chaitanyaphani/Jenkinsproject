@@ -61,9 +61,9 @@ pipeline {
             }
             
             steps{
-                sh "ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'root@172.31.12.130:/root', playbook: 'root@172.31.12.130:/root'"
+                //sh "ansiblePlaybook credentialsId: 'root', disableHostKeyChecking: true, installation: 'ansible', inventory: 'root@172.31.12.130:/root', playbook: 'root@172.31.12.130:/root'"
                 //sh "ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130.us-east-2.compute.internal uptime"
-                //sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130'
+                sh 'ssh -t -t -o StrictHostKeyChecking=no root@172.31.12.130'
                 sh 'ansible-playbook depl.yml'
             }
         }
