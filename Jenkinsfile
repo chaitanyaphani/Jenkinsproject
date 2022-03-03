@@ -57,7 +57,7 @@ pipeline {
         stage('Run ansible'){
             steps{
                 //sh "ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130.us-east-2.compute.internal uptime"
-                sh 'ssh root@ip-172-31-12-130'
+                sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130'
                 sh 'whoami'
                 sh 'ansible-playbook depl.yml'
             }
