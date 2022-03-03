@@ -63,7 +63,7 @@ pipeline {
             steps{
                 //sh "ansiblePlaybook credentialsId: 'jenkins', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'depl.yml'"
                 //sh "ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130.us-east-2.compute.internal uptime"
-                sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130 --private-key=$ANSIBLE_PRIVATE_KEY'
+                sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130'
                 sh 'ansible-playbook depl.yml --private-key=$ANSIBLE_PRIVATE_KEY'
                 sh 'whoami'
             }
