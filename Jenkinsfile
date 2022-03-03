@@ -56,11 +56,15 @@ pipeline {
   }
     
         stage('Run ansible'){
+            environment {
+                ANSIBLE_PRIVATE_KEY=credentials('root')
+            }
+            
             steps{
                 //sh "ansiblePlaybook credentialsId: 'jenkins', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'depl.yml'"
                 //sh "ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130.us-east-2.compute.internal uptime"
-                //sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130 "ansible-playbook depl.yml"'
-                sh 'ansible-playbook depl.yml'
+                sh 'ssh -t -t -o StrictHostKeyChecking=no root@ip-172-31-12-130 --private-key=$ANSIBLE_PRIVATE_KEY'
+                sh 'ansible-playbook depl.yml --private-key=$ANSIBLE_PRIVATE_KEY'
                 sh 'whoami'
             }
         }
