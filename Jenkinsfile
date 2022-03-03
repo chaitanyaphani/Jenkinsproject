@@ -38,9 +38,10 @@ pipeline {
     
     
      stage('Build and push Docker images..') {
-     environment {
+     /*environment {
             DOCKERHUB_CREDENTIALS=credentials('dockerjenkins')
         }
+        */
       steps{
        sh "sudo docker image build -t $JOB_NAME:v1.$BUILD_ID /var/lib/jenkins/workspace/project/."
        sh "sudo docker image tag $JOB_NAME:v1.$BUILD_ID phani09/$JOB_NAME:v1.$BUILD_ID"
