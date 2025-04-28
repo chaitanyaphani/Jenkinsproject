@@ -23,7 +23,6 @@ pipeline {
             steps {
                 echo 'Packaging....'
                 sh 'mvn package'
-                echo 'parameterised success'
             }
         }
 /*        
